@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80vh;
+    width: 80vh;
+}
+
+.items{
+    flex: 0 0 6.25%;
+    height: 6.25%;
+    border: 1px solid #ddd;
+}
+
+.red{
+    background-color: red;
+}
