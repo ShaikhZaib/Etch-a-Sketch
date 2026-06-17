@@ -28,9 +28,18 @@ function createGrid(gridSize){
         const squareSize = 100 / gridSize;
         item.style.flex = `0 0 ${squareSize}%`;
         item.style.height = `${squareSize}%`; 
+        item.dataset.lightness = 100;
+
+        const hue = Math.floor(Math.random() * 256);
 
         item.addEventListener("mouseover", () => {
-            item.style.backgroundColor = "#2ecc71";
+            // item.style.backgroundColor = randomColor();
+            let currentLightness = parseInt(item.dataset.lightness);
+            if(currentLightness > 0){
+                currentLightness -= 10;
+                item.dataset.lightness = currentLightness;
+                item.style.backgroundColor = `hsl(${hue}, 100%, ${currentLightness}%)`;
+            } 
         });
 
 
@@ -38,3 +47,11 @@ function createGrid(gridSize){
     }
 }
 
+function randomColor(){
+   const r = Math.floor(Math.random() * 256);
+   const g = Math.floor(Math.random() * 256);
+   const b = Math.floor(Math.random() * 256);
+   const color = `rgb(${r}, ${g}, ${b})`;
+
+   return color;
+}
