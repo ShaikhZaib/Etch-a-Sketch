@@ -30,7 +30,7 @@ function createGrid(gridSize){
         item.style.height = `${squareSize}%`; 
         item.dataset.lightness = 100;
 
-        const hue = Math.floor(Math.random() * 256);
+        const hue = Math.floor(Math.random() * 361);
 
         item.addEventListener("mouseover", () => {
             // item.style.backgroundColor = randomColor();
